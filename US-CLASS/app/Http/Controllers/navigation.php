@@ -138,11 +138,44 @@ class navigation extends Controller
         ]);
     }
 
+    public function c1Jadwal($id) {
+
+        $class = Kelas::find($id);
+
+        $jadwalSenin = jadwal::where('waktu', 'like', '%Senin%')->get();
+        $jadwalSelasa = jadwal::where('waktu', 'like', '%Selasa%')->get();
+        $jadwalRabu = jadwal::where('waktu', 'like', '%Rabu%')->get();
+        $jadwalKamis = jadwal::where('waktu', 'like', '%Kamis%')->get();
+        $jadwalJumat = jadwal::where('waktu', 'like', '%Jumat%')->get();
+        $jadwalSabtu = jadwal::where('waktu', 'like', '%Sabtu%')->get();
+        $jadwalMinggu = jadwal::where('waktu', 'like', '%Minggu%')->get();
+
+        return view('class.c1Jadwal', [
+            'senin' => $jadwalSenin,
+            'selasa' => $jadwalSelasa,
+            'rabu' => $jadwalRabu,
+            'kamis' => $jadwalKamis,
+            'jumat' => $jadwalJumat,
+            'sabtu' => $jadwalSabtu,
+            'minggu' => $jadwalMinggu,
+            'kelas' => $class
+        ]);
+    }
+
     public function remind($id) {
 
         $class = Kelas::find($id);
 
         return view('class.c1remind', [
+            'kelas' => $class
+        ]);
+    }
+
+    public function c1Request($id) {
+
+        $class = Kelas::find($id);
+
+        return view('class.c1Request', [
             'kelas' => $class
         ]);
     }

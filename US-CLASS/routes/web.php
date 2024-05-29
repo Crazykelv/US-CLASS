@@ -16,7 +16,9 @@ Route::get('/buatKelas',[navigation::class,'buatKelas']);
 Route::get('/editKelas/{id}',[navigation::class,'editKelas']);
 Route::get('/classRequest/{id}',[navigation::class,'classRequest']);
 Route::get('/detailRequest/{id}',[navigation::class,'detailRequest']);
-Route::get('/c1/{id}',[navigation::class,'c1']);
+Route::get('/c1/{id}',[navigation::class,'c1'])->name('c1');
+Route::get('/c1Jadwal/{id}',[navigation::class,'c1Jadwal']);
+Route::get('/c1Request/{id}',[navigation::class,'c1Request']);
 Route::get('/remind/{id}',[navigation::class,'remind']);
 Route::get('/chooseClassRequest/{id}',[navigation::class,'chooseClassRequest']);
 Route::get('/userRequest',[navigation::class,'userRequest']);
@@ -36,6 +38,7 @@ Route::get('/confirmation/{id}',[database::class,'confirmation']);
 Route::post('/addKelas',[database::class,'addKelas']);
 Route::post('/addEditedKelas/{id}',[database::class,'addEditedKelas']);
 Route::post('/sentRequest/{id}',[database::class,'sentRequest']);
+Route::post('/sentRequestc1/{id}',[database::class,'sentRequestc1']);
 Route::post('/accAjuan/{id}',[database::class,'accAjuan']);
 
 

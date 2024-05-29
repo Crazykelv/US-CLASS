@@ -19,18 +19,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">227006051@student.unsil.ac.id</a>
+                <a class="nav-link active" aria-current="page" href="{{url('c1', $kelas->id)}}">Kembali</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
                 <a class="navbar-brand text-primary-emphasis fs-2 font-monospace" href="#">Universitas Siliwangi</a>
-                <img src="body/unsil.png" class="" style="width: 55px">
+                <img src="{{asset('body/unsil.png')}}" class="" style="width: 55px">
             </form>
           </div>
         </div>
       </nav>
 
-    <form action="{{url('sentRequest', $kelas->id)}}" method="POST" enctype="multipart/form-data">
+    <form action="{{url('sentRequestc1', $kelas->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="container mt-5 mb-2 w-50 rounded shadow" style="border: 1px solid black">
             <div class="mt-3 mb-1 row w-75">
@@ -56,13 +56,12 @@
                     <input type="text"  class="form-control" id="staticEmail" placeholder="Misal : Perkuliahan" name="usedFor">
                 </div>
                 <div class="container text-end mt-2 mb-2 mx-1">
-                    <input type="submit" class="btn btn-primary w-25">
+                    <input type="submit" id="confirmButton" class="btn btn-primary w-25">
                 </div>
 
             </div>
         </div>
     </form>
-
     <script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')}}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
         </ul>
         <form class="d-flex" role="search">
             <a class="navbar-brand text-primary-emphasis fs-2 font-monospace" href="#">Universitas Siliwangi</a>
-          <button class="btn btn-outline-success" type="submit">Logo</button>
+            <img src="{{asset('body/unsil.png')}}" class="" style="width: 55px">
         </form>
       </div>
     </div>

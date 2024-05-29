@@ -119,6 +119,43 @@ class database extends Controller
         return redirect()->route('main');
     }
 
+    public function sentRequestc1($id, Request $request) {
+
+        $class = Kelas::find($id);
+        $pengajuan = new pengajuan;
+
+        $pengajuan -> idKelas = $class -> id;
+        $pengajuan -> namaKelas = $class -> namaRuangan;
+        $pengajuan -> pengaju = $request -> pengaju;
+
+        $dateString = $request->tanggalm;
+        $date = Carbon::parse($dateString);
+        $dayOfWeek = $date->format('l');
+
+        if ($dayOfWeek == 'Sunday') {
+            $dayOfWeek = 'Minggu';
+        } elseif ($dayOfWeek == 'Monday') {
+            $dayOfWeek = 'Senin';
+        } elseif ($dayOfWeek == 'Tuesday') {
+            $dayOfWeek = 'Selasa';
+        } elseif ($dayOfWeek == 'Wednesday') {
+            $dayOfWeek = 'Rabu';
+        } elseif ($dayOfWeek == 'Thursday') {
+            $dayOfWeek = 'Kamis';
+        } elseif ($dayOfWeek == 'Friday') {
+            $dayOfWeek = 'Jumat';
+        } elseif ($dayOfWeek == 'Saturday') {
+            $dayOfWeek = 'Sabtu';
+        }
+
+        $pengajuan -> waktu = ($dayOfWeek . ' ' . $request->tanggalm . ', Pukul : ' . $request->waktum . '-' . $request->waktus);
+        $pengajuan -> usedFor = $request -> usedFor;
+
+        $pengajuan->save();
+
+        return redirect()->route('c1', $class);
+    }
+
     public function accAjuan($id, Request $request) {
         
         $req = pengajuan::find($id);

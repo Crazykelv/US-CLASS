@@ -32,7 +32,7 @@
             </ul>
             <form class="d-flex" role="search">
                 <a class="navbar-brand text-primary-emphasis fs-2 font-monospace" href="#">Universitas Siliwangi</a>
-              <button class="btn btn-outline-success" type="submit">Logo</button>
+                <img src="{{asset('body/unsil.png')}}" class="" style="width: 55px">
             </form>
           </div>
         </div>
@@ -45,8 +45,8 @@
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto text-center">
                 <h3 class="mt-3">Senin</h3>
                 @if ($senin->isEmpty())
-                    <div class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                        <span class="fs-4"> Kosong </span>
+                    <div class="col-2 btn btn-warning fs-5 p-4 m-2 mb-3 text-light" style="width: fit-content">
+                        <span class="fs-4"> Belum ada jadwal pada hari ini </span>
                     </div>
                 @else
                 @foreach ($senin as $item)
@@ -60,9 +60,9 @@
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto text-center">
                 <h3 class="mt-3">Selasa</h3>
                 @if ($selasa->isEmpty())
-                    <div class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                        <span class="fs-4"> Kosong </span>
-                    </div>
+                <div class="col-2 btn btn-warning fs-5 p-4 m-2 mb-3 text-light" style="width: fit-content">
+                    <span class="fs-4"> Belum ada jadwal pada hari ini </span>
+                </div>
                 @else
                 @foreach ($selasa as $item)
                         <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
@@ -75,9 +75,9 @@
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto text-center">
                 <h3 class="mt-3">Rabu</h3>
                 @if ($rabu->isEmpty())
-                    <div class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                        <span class="fs-4"> Kosong </span>
-                    </div>
+                <div class="col-2 btn btn-warning fs-5 p-4 m-2 mb-3 text-light" style="width: fit-content">
+                    <span class="fs-4"> Belum ada jadwal pada hari ini </span>
+                </div>
                 @else
                 @foreach ($rabu as $item)
                         <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
@@ -90,9 +90,9 @@
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto text-center">
                 <h3 class="mt-3">Kamis</h3>
                 @if ($kamis->isEmpty())
-                    <div class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                        <span class="fs-4"> Kosong </span>
-                    </div>
+                <div class="col-2 btn btn-warning fs-5 p-4 m-2 mb-3 text-light" style="width: fit-content">
+                    <span class="fs-4"> Belum ada jadwal pada hari ini </span>
+                </div>
                 @else
                 @foreach ($kamis as $item)
                         <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
@@ -105,9 +105,9 @@
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto text-center">
                 <h3 class="mt-3">Jumat</h3>
                 @if ($jumat->isEmpty())
-                    <div class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                        <span class="fs-4"> Kosong </span>
-                    </div>
+                <div class="col-2 btn btn-warning fs-5 p-4 m-2 mb-3 text-light" style="width: fit-content">
+                    <span class="fs-4"> Belum ada jadwal pada hari ini </span>
+                </div>
                 @else
                 @foreach ($jumat as $item)
                         <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
@@ -120,24 +120,24 @@
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto text-center">
                 <h3 class="mt-3">Sabtu</h3>
                 @if ($sabtu->isEmpty())
-                    <div class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                        <span class="fs-4"> Kosong </span>
-                    </div>
+                <div class="col-2 btn btn-warning fs-5 p-4 m-2 mb-3 text-light" style="width: fit-content">
+                    <span class="fs-4"> Belum ada jadwal pada hari ini </span>
+                </div>
                 @else
                 @foreach ($sabtu as $item)
-                        <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                            {{$item->namaRuangan}} <br>
-                            <span class="fs-4"> Kosong </span>
-                        </a>
+                <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
+                    {{$item->namaRuangan}} <br>
+                    <span style="font-size: 12px"> {{$item->waktu}} </span>
+                </a>
                 @endforeach
                 @endif
             </div>
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto text-center">
                 <h3 class="mt-3">Minggu</h3>
                 @if ($minggu->isEmpty())
-                    <div class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
-                        <span class="fs-4"> Kosong </span>
-                    </div>
+                <div class="col-2 btn btn-warning fs-5 p-4 m-2 mb-3 text-light" style="width: fit-content">
+                    <span class="fs-4"> Belum ada jadwal pada hari ini </span>
+                </div>
                 @else
                 @foreach ($minggu as $item)
                         <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
