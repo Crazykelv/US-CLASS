@@ -37,7 +37,7 @@
         <h1 class="fs-1"> Halaman Request </h1>
     </div>
     <div class="container text-center mt-3">
-        <span>Silakan tekan kelas yang akan diajukan untuk dipinjam</span>
+        <span>Silakan pilih kelas yang akan diajukan untuk dipinjam</span>
     </div>
     <div style="border: 2px solid rgb(133, 203, 212)" class="container text-center mt-2 rounded">
         <div style="border: 2px solid rgb(133, 203, 212)" class="container text-center mt-1 pt-5 pb-5 mb-1 rounded">

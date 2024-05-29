@@ -23,7 +23,7 @@
               <a class="nav-link btn" aria-current="page" href="{{url('/')}}">227006051@student.unsil.ac.id</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{url('jadwalA')}}">Jadwal</a>
+              <a class="nav-link" aria-current="page" href="{{url('jadwalU')}}">Jadwal</a>
             </li>
           </ul>
           <form class="d-flex" role="search">

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jadwal;
+use Carbon\Carbon;
 use App\Models\kelas;
-use App\Models\pengajuan;
+use App\Models\jadwal;
 use App\Models\select;
+use App\Models\pengajuan;
 use Illuminate\Http\Request;
 
 class database extends Controller
@@ -89,7 +90,28 @@ class database extends Controller
         $pengajuan -> idKelas = $class -> id;
         $pengajuan -> namaKelas = $class -> namaRuangan;
         $pengajuan -> pengaju = $request -> pengaju;
-        $pengajuan -> waktu = $request -> waktu;
+
+        $dateString = $request->tanggalm;
+        $date = Carbon::parse($dateString);
+        $dayOfWeek = $date->format('l');
+
+        if ($dayOfWeek == 'Sunday') {
+            $dayOfWeek = 'Minggu';
+        } elseif ($dayOfWeek == 'Monday') {
+            $dayOfWeek = 'Senin';
+        } elseif ($dayOfWeek == 'Tuesday') {
+            $dayOfWeek = 'Selasa';
+        } elseif ($dayOfWeek == 'Wednesday') {
+            $dayOfWeek = 'Rabu';
+        } elseif ($dayOfWeek == 'Thursday') {
+            $dayOfWeek = 'Kamis';
+        } elseif ($dayOfWeek == 'Friday') {
+            $dayOfWeek = 'Jumat';
+        } elseif ($dayOfWeek == 'Saturday') {
+            $dayOfWeek = 'Sabtu';
+        }
+
+        $pengajuan -> waktu = ($dayOfWeek . ' ' . $request->tanggalm . ', Pukul : ' . $request->waktum . '-' . $request->waktus);
         $pengajuan -> usedFor = $request -> usedFor;
 
         $pengajuan->save();
@@ -139,5 +161,7 @@ class database extends Controller
 
         return redirect()->back();
     }
+
+
 
 }

@@ -42,7 +42,7 @@
 
             <div class="row mt-2 mb-2 justify-content-center border shadow w-75 mx-auto">
                 @foreach ($kelas as $item)
-                        <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-4 m-2" style="width:8em">
+                        <a href="{{url('detailRequest', $item->id)}}" class="col-2 btn btn-success fs-5 p-2 m-2" style="width:7em">
                             {{$item->namaKelas}} <br>
                             <span style="font-size: 12px"> {{$item->waktu}} </span>
                         </a>
