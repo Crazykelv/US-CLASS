@@ -49,6 +49,8 @@
                 <label for="staticEmail" class="col-sm-2 col-form-label">Pemakaian Pada Waktu :</label>
                 <div class="col-sm-10">
                     <input type="text" readonly class="form-control" id="staticEmail" value="{{$kelas->waktu}}" name="waktu">
+                    <div class="container">
+                    </div>
                 </div>
             </div>
             <div class="mt-3 mb-1 row">

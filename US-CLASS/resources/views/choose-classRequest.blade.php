@@ -33,17 +33,22 @@
     <form action="{{url('sentRequest', $kelas->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="container mt-5 mb-2 w-50 rounded shadow" style="border: 1px solid black">
-            <div class="mt-3 mb-1 row">
+            <div class="mt-3 mb-1 row w-75">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Nama Pengaju :</label>
                 <div class="col-sm-10">
-                <input type="text"  class="form-control" id="staticEmail" placeholder="Nama pengaju" name="pengaju">
+                  <input type="text"  class="form-control" id="staticEmail" placeholder="Nama pengaju" name="pengaju">
                 </div>
             </div>
             <div class="mt-3 mb-1 row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Pemakaian Pada Waktu :</label>
-                <div class="col-sm-10">
-                    <input type="text"  class="form-control" id="staticEmail" placeholder="Hari, jangka waktu. Senin, 07:30-08:00" name="waktu">
+                <label for="staticEmail" class="col-sm-2 col-form-label w-25">Pemakaian Pada Waktu :</label>
+                <div class="col-sm-10 w-75">
+                  <input type="date" name="tanggalm" class="m-2">
+                  <input type="time" name="waktum" class="me-4">
+                  <label for="staticEmail" class="col-sm-2 col-form-label w-25">Sampai Dengan :</label>
+                  <input type="time" name="waktus">
                 </div>
+
+                
             </div>
             <div class="mt-3 mb-1 row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Digunakan Untuk :</label>
