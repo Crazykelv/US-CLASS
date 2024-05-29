@@ -26,6 +26,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{url('jadwalA')}}">Jadwal</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('requestList')}}">Request</a>
+              </li>
             </ul>
             <form class="d-flex" role="search">
                 <a class="navbar-brand text-primary-emphasis fs-2 font-monospace" href="#">Universitas Siliwangi</a>
